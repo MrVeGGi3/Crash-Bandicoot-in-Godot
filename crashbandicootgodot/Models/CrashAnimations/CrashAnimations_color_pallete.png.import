@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfgd7cck7ldg"
-path.s3tc="res://.godot/imported/CrashAnimations_color_pallete.png-8e16621eafef977d6f684c1662981f34.s3tc.ctex"
+path.s3tc="res://.godot/imported/CrashAnimations_color_pallete.png-963a0d17b8baaecd3f438c44cf0f03e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/CrashAnimations_color_pallete.png"
-dest_files=["res://.godot/imported/CrashAnimations_color_pallete.png-8e16621eafef977d6f684c1662981f34.s3tc.ctex"]
+source_file="res://Models/CrashAnimations/CrashAnimations_color_pallete.png"
+dest_files=["res://.godot/imported/CrashAnimations_color_pallete.png-963a0d17b8baaecd3f438c44cf0f03e2.s3tc.ctex"]
 
 [params]
 

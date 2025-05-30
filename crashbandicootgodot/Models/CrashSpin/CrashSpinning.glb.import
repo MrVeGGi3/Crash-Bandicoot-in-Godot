@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0jvt3j02ttrw"
-path="res://.godot/imported/CrashAnimations.glb-1942b0ffb9fe9baa2fd41d856ba92608.scn"
+uid="uid://dop2s68mb5hso"
+path="res://.godot/imported/CrashSpinning.glb-66d7a917cc7772fdabc13f157c51509f.scn"
 
 [deps]
 
-source_file="res://Models/CrashAnimations.glb"
-dest_files=["res://.godot/imported/CrashAnimations.glb-1942b0ffb9fe9baa2fd41d856ba92608.scn"]
+source_file="res://Models/CrashSpin/CrashSpinning.glb"
+dest_files=["res://.godot/imported/CrashSpinning.glb-66d7a917cc7772fdabc13f157c51509f.scn"]
 
 [params]
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2211qp34voo6"]
+
+[ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_83sc6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp0mo"]
+albedo_color = Color(0.298308, 0.832431, 0.606883, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_83sc6"]
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slpgq"]
+size = Vector3(1000, 1, 1000)
+
+[node name="CrashMovement" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_jp0mo")
+mesh = SubResource("BoxMesh_83sc6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_slpgq")
+
+[node name="CrashBandicoot" parent="." instance=ExtResource("1_83sc6")]

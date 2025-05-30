@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vgqnt6e6318d"
-path.s3tc="res://.godot/imported/CrashAnimations_back.png-a362cf199d28685c233b0735d48fcee1.s3tc.ctex"
+uid="uid://cws6mbx4vdu2o"
+path.s3tc="res://.godot/imported/CrashAnimations_shoes.png-800c1466120add6eee3a22edb1633105.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2e1f5a39f2d4f783ae2631a58705c115"
+"md5": "c76e998af99be7c11e1e8d2905a384c0"
 }
 
 [deps]
 
-source_file="res://Models/CrashAnimations_back.png"
-dest_files=["res://.godot/imported/CrashAnimations_back.png-a362cf199d28685c233b0735d48fcee1.s3tc.ctex"]
+source_file="res://Models/CrashAnimations/CrashAnimations_shoes.png"
+dest_files=["res://.godot/imported/CrashAnimations_shoes.png-800c1466120add6eee3a22edb1633105.s3tc.ctex"]
 
 [params]
 
