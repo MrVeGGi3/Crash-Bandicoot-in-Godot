@@ -16,6 +16,7 @@ func _ready() -> void:
 	
 	
 func change_animation(state):
+	animation_player.speed_scale = 1.0
 	match state:
 		crash.CrashState.IDLE:
 			animation_player.play("CrashIdle")
@@ -24,6 +25,7 @@ func change_animation(state):
 		crash.CrashState.FELT:
 			animation_player.play("CrashFelt")
 		crash.CrashState.WALKING:
+			animation_player.speed_scale = 2.5
 			animation_player.play("CrashWalking")
 		crash.CrashState.DASHING:
 			animation_player.play("CrashDash")
@@ -45,12 +47,11 @@ func _on_spinning_animation_player_animation_finished(anim_name: StringName) -> 
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "CrashFelt":
+	if anim_name == "CrashFelt" or anim_name == "CrashDash":
 		crash.current_state = crash.CrashState.IDLE
 	elif anim_name == "CrashAttack":
 		if crash.velocity.y < 0:
 			crash.current_state = crash.CrashState.FALLING
 		else:
 			crash.current_state = crash.CrashState.IDLE
-
 	

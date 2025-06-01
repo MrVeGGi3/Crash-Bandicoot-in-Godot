@@ -7,10 +7,10 @@ const STATE_TO_CONDITION = {
 	crash.CrashState.IDLE: "idle",
 	crash.CrashState.WALKING: "walk",
 	crash.CrashState.JUMPING: "jump",
-	crash.CrashState.ATTACKING: "jump",
+	crash.CrashState.ATTACKING: "attack",
 	crash.CrashState.FALLATTACK: "fall_a",
 	crash.CrashState.FALLING: "fall"
-	
+
 }
 
 

@@ -4,10 +4,12 @@ extends CharacterBody3D
 ##Current state of Crash
 @export_group("Crash Properties")
 @export var current_state : CrashState
-@export var speed : float = 10.0
+@export var speed : float = 100.0
 @export var acceleration : float = 8.0
-@export var jump_force : float =  70.0
+@export var jump_force : float =  100.0
 @export var rotation_speed : float = 12.0
+@export var bump_speed : float = -50.0
+@export var dash_speed : float = 100.00
 @onready var _skin : Node3D = %CrashAnimations
 
 @export var gravity = -120
@@ -57,7 +59,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sens
-
+		
 func _process(delta: float) -> void:
 	emit_signal("state_changed", current_state)
 	print(current_state)
@@ -86,7 +88,7 @@ func _handle_camera_and_movement():
 	
 	var is_jumping := Input.is_action_just_pressed("jump") 
 	var is_attacking := Input.is_action_just_pressed("attack")
-	
+	var is_bumping := Input.is_action_just_pressed("bump")
 	
 	
 	if is_on_floor():
@@ -96,11 +98,15 @@ func _handle_camera_and_movement():
 				current_state = CrashState.JUMPING
 			if is_attacking:
 				current_state = CrashState.ATTACKING
-		
-		elif move_direction.length() > 0.1:
+			
+		elif move_direction.length() > 0.1 and current_state != CrashState.DASHING:
 			current_state = CrashState.WALKING
 			if is_attacking:
 				current_state = CrashState.ATTACKING
+			elif is_bumping:
+				current_state = CrashState.DASHING
+				velocity = move_direction * dash_speed
+			
 				
 		elif current_state == CrashState.FALLING:
 			current_state = CrashState.FELT
@@ -108,13 +114,18 @@ func _handle_camera_and_movement():
 			if is_attacking:
 				current_state = CrashState.ATTACKING
 			else:
-				if current_state != CrashState.FELT:
+				if current_state != CrashState.FELT and current_state != CrashState.DASHING:
 					current_state = CrashState.IDLE
 	else:
-		if velocity.y < - 0.5:
-			current_state = CrashState.FALLING
-		elif is_attacking:
-			current_state = CrashState.ATTACKING
+		if current_state != CrashState.DASHING:
+			if velocity.y < - 0.5 and current_state != CrashState.FALLATTACK:
+				current_state = CrashState.FALLING
+			elif is_attacking:
+				current_state = CrashState.ATTACKING
+			elif is_bumping and current_state:
+				current_state = CrashState.FALLATTACK
+			
+			
 		
 	move_and_slide()
 	
@@ -124,3 +135,5 @@ func _handle_camera_and_movement():
 	var target_angle := Vector3.BACK.signed_angle_to(_last_mov_direction, Vector3.UP)
 	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * get_physics_process_delta_time())
 	
+func reset_velocity():
+	velocity = Vector3.ZERO
