@@ -3,7 +3,7 @@ extends Node
 @onready var crash  : CrashBandicoot = $".."
 
 @onready var animation_player: AnimationPlayer = $"../CollisionShape3D/CrashAnimations/AnimationPlayer"
-@onready var spinning_animation_player: AnimationPlayer = $"../CollisionShape3D/CrashSpinning/SpinningAnimationPlayer"
+@onready var spinning_animation_player: AnimationPlayer = $"../CollisionShape3D/CrashSpinning/AnimationPlayer"
 
 
 @onready var crash_spinning: Node3D = %CrashSpinning
@@ -47,3 +47,10 @@ func _on_spinning_animation_player_animation_finished(anim_name: StringName) -> 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "CrashFelt":
 		crash.current_state = crash.CrashState.IDLE
+	elif anim_name == "CrashAttack":
+		if crash.velocity.y < 0:
+			crash.current_state = crash.CrashState.FALLING
+		else:
+			crash.current_state = crash.CrashState.IDLE
+
+	

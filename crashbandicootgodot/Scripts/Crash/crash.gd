@@ -6,11 +6,11 @@ extends CharacterBody3D
 @export var current_state : CrashState
 @export var speed : float = 10.0
 @export var acceleration : float = 8.0
-@export var jump_force : float =  40.0
+@export var jump_force : float =  70.0
 @export var rotation_speed : float = 12.0
 @onready var _skin : Node3D = %CrashAnimations
 
-@export var gravity = -30
+@export var gravity = -120
 
 
 @export_group("Movement")
@@ -85,24 +85,36 @@ func _handle_camera_and_movement():
 	velocity = velocity.move_toward(move_direction * speed, acceleration * get_physics_process_delta_time())
 	
 	var is_jumping := Input.is_action_just_pressed("jump") 
+	var is_attacking := Input.is_action_just_pressed("attack")
+	
+	
 	
 	if is_on_floor():
 		if is_jumping:
 			velocity.y += jump_force
 			if current_state != CrashState.ATTACKING:
 				current_state = CrashState.JUMPING
-				
-		elif move_direction.length() > 0.1:
-				current_state = CrashState.WALKING
+			if is_attacking:
+				current_state = CrashState.ATTACKING
 		
+		elif move_direction.length() > 0.1:
+			current_state = CrashState.WALKING
+			if is_attacking:
+				current_state = CrashState.ATTACKING
+				
 		elif current_state == CrashState.FALLING:
 			current_state = CrashState.FELT
 		else:
-			if current_state != CrashState.FELT:
-				current_state = CrashState.IDLE
+			if is_attacking:
+				current_state = CrashState.ATTACKING
+			else:
+				if current_state != CrashState.FELT:
+					current_state = CrashState.IDLE
 	else:
 		if velocity.y < - 0.5:
 			current_state = CrashState.FALLING
+		elif is_attacking:
+			current_state = CrashState.ATTACKING
 		
 	move_and_slide()
 	
