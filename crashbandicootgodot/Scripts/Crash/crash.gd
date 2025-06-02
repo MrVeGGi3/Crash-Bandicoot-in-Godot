@@ -39,6 +39,16 @@ enum CrashState
 	DIED
 }
 
+static var STATE_TO_CONDITION = {
+	CrashState.IDLE: "idle",
+	CrashState.WALKING: "walk",
+	CrashState.JUMPING: "jump",
+	CrashState.ATTACKING: "attack",
+	CrashState.FALLATTACK: "fall_a",
+	CrashState.FALLING: "fall",
+	CrashState.DASHING: "dash",
+	CrashState.FELT: "felt"
+}
 ##Signal where u send the actual state of the main characther
 signal state_changed(state)
 
@@ -60,9 +70,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sens
 		
-func _process(delta: float) -> void:
-	emit_signal("state_changed", current_state)
-	print(current_state)
 	
 func _physics_process(delta: float) -> void:
 	_handle_camera_and_movement()
@@ -94,36 +101,36 @@ func _handle_camera_and_movement():
 	if is_on_floor():
 		if is_jumping:
 			velocity.y += jump_force
-			if current_state != CrashState.ATTACKING:
-				current_state = CrashState.JUMPING
-			if is_attacking:
-				current_state = CrashState.ATTACKING
+			if not is_attacking:
+				set_state(CrashState.JUMPING)
+			else:
+				set_state(CrashState.ATTACKING)
 			
 		elif move_direction.length() > 0.1 and current_state != CrashState.DASHING:
-			current_state = CrashState.WALKING
+			set_state(CrashState.WALKING)
 			if is_attacking:
-				current_state = CrashState.ATTACKING
+				set_state(CrashState.ATTACKING)
 			elif is_bumping:
-				current_state = CrashState.DASHING
+				set_state(CrashState.DASHING)
 				velocity = move_direction * dash_speed
 			
 				
 		elif current_state == CrashState.FALLING:
-			current_state = CrashState.FELT
+			set_state(CrashState.FELT)
 		else:
 			if is_attacking:
-				current_state = CrashState.ATTACKING
+				set_state(CrashState.ATTACKING)
 			else:
 				if current_state != CrashState.FELT and current_state != CrashState.DASHING:
-					current_state = CrashState.IDLE
+					set_state(CrashState.IDLE)
 	else:
 		if current_state != CrashState.DASHING:
 			if velocity.y < - 0.5 and current_state != CrashState.FALLATTACK:
-				current_state = CrashState.FALLING
+				set_state(CrashState.FALLING)
 			elif is_attacking:
-				current_state = CrashState.ATTACKING
-			elif is_bumping and current_state:
-				current_state = CrashState.FALLATTACK
+				set_state(CrashState.ATTACKING)
+			elif is_bumping:
+				set_state(CrashState.FALLATTACK)
 			
 			
 		
@@ -137,3 +144,8 @@ func _handle_camera_and_movement():
 	
 func reset_velocity():
 	velocity = Vector3.ZERO
+
+func set_state(new_state : CrashState):
+	if new_state != current_state:
+		current_state = new_state
+		emit_signal("state_changed", current_state)
