@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs28ke38vtl3v"]
+
+[ext_resource type="PackedScene" uid="uid://day4i8rntmfn3" path="res://Models/WumpaFruit/scene.gltf" id="1_ut5yr"]
+
+[node name="WumpaFruitDisplay" type="SubViewportContainer"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.630266)
+
+[node name="Sketchfab_Scene" parent="SubViewport/Camera3D" instance=ExtResource("1_ut5yr")]
+transform = Transform3D(0.0665272, 0, 0, 0, 0.0665272, 0, 0, 0, 0.0665272, 0, 0, -0.69461)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Camera3D"]

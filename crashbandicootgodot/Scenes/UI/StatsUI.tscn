@@ -1,0 +1,322 @@
+[gd_scene load_steps=15 format=3 uid="uid://djyvx0gngmpnj"]
+
+[ext_resource type="Script" uid="uid://cgvsmdxkxfqiy" path="res://Scripts/UI/UI.gd" id="1_4w0m6"]
+[ext_resource type="Script" uid="uid://ce347qayasbh0" path="res://Scripts/UI/wumpa_fruit_ui.gd" id="2_kntte"]
+[ext_resource type="Theme" uid="uid://43i8orht66rm" path="res://Themes/StatsUI.tres" id="3_kntte"]
+[ext_resource type="Texture2D" uid="uid://dyw6fwwkghgdp" path="res://Assets/Images/CrashLifes.png" id="4_cor7i"]
+[ext_resource type="AudioStream" uid="uid://eewy1hw2a6pp" path="res://Sounds/SFX/Fruit.wav" id="5_cor7i"]
+[ext_resource type="Texture2D" uid="uid://covy2p6fpjt0t" path="res://Assets/Images/Fruit.png" id="5_p76xq"]
+[ext_resource type="Script" uid="uid://na7s64442vwt" path="res://Scripts/UI/crash_lifes.gd" id="6_p76xq"]
+[ext_resource type="AudioStream" uid="uid://b6hbyguieyi1w" path="res://Sounds/SFX/Crash Bandicoot - Extra Life.wav" id="7_4m7t7"]
+
+[sub_resource type="Animation" id="Animation_cor7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WumpaQuantLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FruitCollected:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WumpaSprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(358, 289)]
+}
+
+[sub_resource type="Animation" id="Animation_kntte"]
+resource_name = "added_fruit"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WumpaQuantLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667, 0.9),
+"transitions": PackedFloat32Array(1, 4.43828, 0.574349),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FruitCollected:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_add_fruit"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WumpaSprite2D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.233333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(358, 289), Vector2(92, 94)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4m7t7"]
+_data = {
+&"RESET": SubResource("Animation_cor7i"),
+&"added_fruit": SubResource("Animation_kntte")
+}
+
+[sub_resource type="Animation" id="Animation_lvfmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrashLifeEarnt:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrashLifeSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_p76xq"]
+resource_name = "add_life"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrashLifeEarnt:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_add_lifes"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrashLifeSprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.97, 1.5, 2.03333, 2.53333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.349066, 0.349066, -0.349066, 0.349066, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvfmt"]
+_data = {
+&"RESET": SubResource("Animation_lvfmt"),
+&"add_life": SubResource("Animation_p76xq")
+}
+
+[node name="StatsUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4w0m6")
+
+[node name="ActiveUITimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="WumpaFruit" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_kntte")
+
+[node name="WumpaQuantLabel" type="Label" parent="WumpaFruit"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 19.0
+offset_right = 259.0
+offset_bottom = 145.0
+theme = ExtResource("3_kntte")
+text = "0"
+
+[node name="FruitCollectedAnimator" type="AnimationPlayer" parent="WumpaFruit"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_4m7t7")
+}
+
+[node name="InitialPoistion" type="Marker2D" parent="WumpaFruit"]
+position = Vector2(265, 313)
+
+[node name="FinalPosition" type="Marker2D" parent="WumpaFruit"]
+
+[node name="FruitCollected" type="AudioStreamPlayer" parent="WumpaFruit"]
+stream = ExtResource("5_cor7i")
+bus = &"SFX"
+
+[node name="WumpaSprite2D" type="Sprite2D" parent="WumpaFruit"]
+position = Vector2(93, 95)
+scale = Vector2(0.830865, 0.830865)
+texture = ExtResource("5_p76xq")
+
+[node name="WumpaSprite2D2" type="Sprite2D" parent="WumpaFruit"]
+visible = false
+position = Vector2(358, 289)
+scale = Vector2(0.830865, 0.830865)
+texture = ExtResource("5_p76xq")
+
+[node name="CrashLifes" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 584.0
+offset_top = -10.0
+offset_right = 624.0
+offset_bottom = 30.0
+script = ExtResource("6_p76xq")
+
+[node name="CrashLifeSprite2D" type="Sprite2D" parent="CrashLifes"]
+position = Vector2(470, 97)
+scale = Vector2(0.343352, 0.343352)
+texture = ExtResource("4_cor7i")
+
+[node name="CrashControlLabel" type="Label" parent="CrashLifes"]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 39.0
+offset_right = 374.0
+offset_bottom = 165.0
+theme = ExtResource("3_kntte")
+theme_override_colors/font_color = Color(0.607843, 0.47451, 0, 1)
+text = "4"
+
+[node name="CrashLifeEarnt" type="AudioStreamPlayer" parent="CrashLifes"]
+stream = ExtResource("7_4m7t7")
+
+[node name="LifeCollectedAnimator" type="AnimationPlayer" parent="CrashLifes"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_lvfmt")
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="timeout" from="ActiveUITimer" to="." method="_on_active_ui_timer_timeout"]

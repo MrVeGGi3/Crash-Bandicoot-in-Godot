@@ -1,6 +1,7 @@
 extends State
 
 func enter() -> void:
+	char_owner.change_animation_speed_scale(1.0)
 	char_owner.play_animation("CrashDash")
 	char_owner.velocity = owner.get_dash_direction() * owner.dash_speed
 

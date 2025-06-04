@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2211qp34voo6"]
+[gd_scene load_steps=7 format=3 uid="uid://d2211qp34voo6"]
 
 [ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_83sc6"]
+[ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="2_qeok4"]
+[ext_resource type="PackedScene" uid="uid://dder4xt5uwasw" path="res://Models/WumpaFruit/Wumpa/Wumpa.tscn" id="3_lthcy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp0mo"]
 albedo_color = Color(0.298308, 0.832431, 0.606883, 1)
@@ -28,4 +30,18 @@ collision_layer = 2
 shape = SubResource("BoxShape3D_slpgq")
 
 [node name="CrashBandicoot" parent="." instance=ExtResource("1_83sc6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.3928, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2357, 0)
+
+[node name="StatsUi" parent="." instance=ExtResource("2_qeok4")]
+
+[node name="WumpaFruits" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93721, -4.36366, 30.3676)
+
+[node name="Wumpa" parent="WumpaFruits" instance=ExtResource("3_lthcy")]
+transform = Transform3D(35.1042, 0, 0, 0, 35.1042, 0, 0, 0, 35.1042, 0, 20.2205, 20.3339)
+
+[node name="Wumpa2" parent="WumpaFruits" instance=ExtResource("3_lthcy")]
+transform = Transform3D(35.1042, 0, 0, 0, 35.1042, 0, 0, 0, 35.1042, 0, 20.2205, 132.452)
+
+[node name="Wumpa3" parent="WumpaFruits" instance=ExtResource("3_lthcy")]
+transform = Transform3D(35.1042, 0, 0, 0, 35.1042, 0, 0, 0, 35.1042, 0, 20.2205, 73.9642)

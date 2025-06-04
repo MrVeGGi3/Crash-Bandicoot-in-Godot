@@ -1,6 +1,7 @@
 extends State
 
 func enter() -> void:
+	char_owner.change_animation_speed_scale(1.0)
 	char_owner.play_animation("CrashFelt")
 	print("Estou no Estado de Caído")
 

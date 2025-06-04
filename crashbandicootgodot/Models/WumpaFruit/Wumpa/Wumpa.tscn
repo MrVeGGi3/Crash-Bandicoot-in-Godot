@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dder4xt5uwasw"]
+
+[ext_resource type="Script" uid="uid://blbeanj2cywak" path="res://Scripts/Wumpa/wumpa.gd" id="1_jwvk0"]
+[ext_resource type="PackedScene" uid="uid://day4i8rntmfn3" path="res://Models/WumpaFruit/scene.gltf" id="1_u7equ"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwvk0"]
+
+[node name="Wumpa" type="Area3D" groups=["Wumpa"]]
+transform = Transform3D(1.32487, 0, 0, 0, 1.32487, 0, 0, 0, 1.32487, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_jwvk0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jwvk0")
+
+[node name="Sketchfab_Scene" parent="CollisionShape3D" instance=ExtResource("1_u7equ")]
+transform = Transform3D(0.19911, 0, 0, 0, 0.19911, 0, 0, 0, 0.19911, -0.0771073, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
