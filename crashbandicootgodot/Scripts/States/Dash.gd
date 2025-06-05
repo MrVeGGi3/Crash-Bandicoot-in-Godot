@@ -1,10 +1,11 @@
 extends State
 
 func enter() -> void:
-	char_owner.change_animation_speed_scale(1.0)
+	char_owner.set_tree_transition_request("Dash")
 	char_owner.play_animation("CrashDash")
-	char_owner.velocity = owner.get_dash_direction() * owner.dash_speed
-
+	char_owner.velocity = char_owner.get_dash_direction() * char_owner.dash_speed if char_owner.get_dash_direction() > Vector3.ZERO else Vector3.ZERO
+	print("Estou no Estado de Dash")
+	
 func physics_update(delta: float) -> void:
 	char_owner.apply_gravity(delta)
 	char_owner.move_and_slide()

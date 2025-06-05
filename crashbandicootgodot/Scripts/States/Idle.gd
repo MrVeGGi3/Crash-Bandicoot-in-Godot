@@ -1,12 +1,14 @@
 extends State
 
+
 func enter() -> void:
-	char_owner.change_animation_speed_scale(1.0)
+	char_owner.set_tree_transition_request("IdleWalk")
 	char_owner.velocity = Vector3.ZERO
-	char_owner.play_animation("CrashIdle")
 	print("Estou no Estado de Idle")
 
 func physics_update(delta: float) -> void:
+	char_owner.set_walk_blend_value()
+	
 	if char_owner.is_moving():
 		char_owner.change_state("Walking")
 	elif char_owner.is_jumping():

@@ -1,7 +1,7 @@
 class_name State
 extends Node
 
-var char_owner : CrashBandicootState
+var char_owner
 
 func enter() -> void:
 	pass

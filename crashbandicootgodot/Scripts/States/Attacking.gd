@@ -1,7 +1,7 @@
 extends State
 
 func enter() -> void:
-	char_owner.change_animation_speed_scale(1.0)
+	char_owner.set_tree_transition_request("Attack")
 	char_owner.play_animation("CrashAttack")
 	
 func physics_update(delta : float) -> void:

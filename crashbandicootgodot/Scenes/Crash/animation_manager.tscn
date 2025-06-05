@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg3qkitjtm0e3"]
-
-[ext_resource type="Script" uid="uid://dq1vrlij2bys1" path="res://Scripts/Crash/animation_manager.gd" id="1_hgrfo"]
-
-[node name="AnimationManager" type="Node"]
-script = ExtResource("1_hgrfo")

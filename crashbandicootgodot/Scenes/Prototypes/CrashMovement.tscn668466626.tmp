@@ -36,7 +36,7 @@ speed = 1000.0
 [node name="StatsUi" parent="." instance=ExtResource("2_qeok4")]
 
 [node name="WumpaFruits" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.588778, 0, 0, 0, 0.588778, -6.93721, 13.6964, 30.3676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93721, -4.36366, 30.3676)
 
 [node name="Wumpa" parent="WumpaFruits" instance=ExtResource("3_lthcy")]
 transform = Transform3D(35.1042, 0, 0, 0, 35.1042, 0, 0, 0, 35.1042, 0, 20.2205, 20.3339)

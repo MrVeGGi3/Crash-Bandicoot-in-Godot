@@ -1,8 +1,8 @@
 extends State
 
 func enter() -> void:
-	char_owner.change_animation_speed_scale(1.0)
-	char_owner.play_animation("CrashFalling")
+	char_owner.set_tree_transition_request("Fall")
+	#char_owner.play_animation("CrashFalling")
 	print("Estou no Estado de Cair")
 
 func physics_update(delta : float) -> void:

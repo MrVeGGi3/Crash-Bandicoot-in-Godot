@@ -2,14 +2,16 @@ extends CharacterBody3D
 class_name CrashBandicootState
 
 @export_group("Crash Properties")
-@export var speed : float = 500.0
-@export var acceleration : float = 8.0
+@export var speed : float = 100.0
+@export var acceleration : float = 100.0
 @export var jump_force : float = 100.0
 @export var dash_speed : float = 150.0
 @export var bump_speed : float = -50.0
+@export var bump_impulse : float = 40.0
 @export var rotation_speed : float = 12.0
 @export var gravity : float = -120.0
 
+@onready var crash_animation_tree: AnimationTree = $CrashAnimationTree
 @onready var crash_animation : AnimationPlayer = %CrashAnimationPlayer
 @onready var _skin : Node3D = %CrashAnimations
 
@@ -26,6 +28,8 @@ var input_direction : Vector2 = Vector2.ZERO
 
 var states = {}
 var current_state : State
+
+var conditions = ["idle", "walk", "jump", "dash", "fall", "fall_a", "felt", "attack"]
 
 
 func _ready() -> void:
@@ -134,5 +138,14 @@ func handle_camera():
 func jump():
 	velocity.y += jump_force
 
-func change_animation_speed_scale(new_speed : float):
-	crash_animation.speed_scale = new_speed
+func bump_impulse_jump():
+	velocity.y += bump_impulse
+
+func set_walk_blend_value():
+	crash_animation_tree["parameters/WalkBlend/blend_amount"] = get_input_direction().length()
+	
+func reset_velocity():
+	velocity = Vector3.ZERO
+	
+func set_tree_transition_request(transition):
+	crash_animation_tree["parameters/Transition/transition_request"] = transition
