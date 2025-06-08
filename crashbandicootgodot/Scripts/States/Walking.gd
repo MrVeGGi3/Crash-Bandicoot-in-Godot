@@ -6,6 +6,7 @@ func enter() -> void:
 
 func physics_update(delta : float) -> void:
 	char_owner.move_character()
+	char_owner.apply_gravity(delta)
 	char_owner.set_walk_blend_value()
 	
 	

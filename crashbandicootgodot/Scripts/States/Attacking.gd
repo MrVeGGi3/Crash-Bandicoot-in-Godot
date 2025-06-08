@@ -1,10 +1,12 @@
 extends State
 
 func enter() -> void:
+	print("Estou no Estado de Ataque")
 	char_owner.set_tree_transition_request("Attack")
 	char_owner.play_animation("CrashAttack")
 	
 func physics_update(delta : float) -> void:
+	char_owner.check_box_collision()
 	char_owner.apply_gravity(delta)
 	char_owner.move_character()
 	

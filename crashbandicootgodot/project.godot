@@ -90,6 +90,7 @@ show={
 3d_physics/layer_1="Crash"
 3d_physics/layer_2="Ambien"
 3d_physics/layer_3="Fruit"
+3d_physics/layer_4="boxes"
 
 [rendering]
 

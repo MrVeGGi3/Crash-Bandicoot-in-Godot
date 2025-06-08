@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciib1hmwt7y0y"]
+
+[ext_resource type="Script" uid="uid://3fhdyftmwcgy" path="res://Scripts/box/particle_rigibody.gd" id="1_jtlj2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jtlj2"]
+bounce = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1lqnw"]
+radius = 0.1
+
+[node name="ParticleRigibody" type="RigidBody3D"]
+collision_layer = 8
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_jtlj2")
+script = ExtResource("1_jtlj2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1lqnw")

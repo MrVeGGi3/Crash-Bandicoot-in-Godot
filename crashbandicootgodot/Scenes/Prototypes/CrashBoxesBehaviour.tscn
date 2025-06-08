@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0ahnkm45rt72"]
+
+[ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_3p857"]
+[ext_resource type="PackedScene" uid="uid://bifc0ajyanq4" path="res://Scenes/Boxes/NormalBox.tscn" id="2_bu8sk"]
+[ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="3_bu8sk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3fsbx"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ium2y"]
+albedo_color = Color(1, 0.427451, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3p857"]
+size = Vector3(100, 1, 100)
+
+[node name="CrashBoxesBehaviour" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_3fsbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+material_override = SubResource("StandardMaterial3D_ium2y")
+mesh = SubResource("BoxMesh_3p857")
+
+[node name="CrashBandicoot" parent="." instance=ExtResource("1_3p857")]
+transform = Transform3D(0.363871, 0, 0, 0, 0.363871, 0, 0, 0, 0.363871, 0, 0, 17.6295)
+floor_block_on_wall = false
+platform_floor_layers = 4294967049
+
+[node name="NormalBox" parent="." node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 6.16819, 0)
+status_ui = NodePath("../StatsUi")
+fruits_to_instantiate = 2
+
+[node name="StatsUi" parent="." instance=ExtResource("3_bu8sk")]

@@ -37,6 +37,9 @@ func reset_timer_count():
 	minutes = 0.0
 	hours = 0.0
 			
+func set_current_level_status(total_boxes):
+	max_boxes = total_boxes
+	
 func _process(delta: float) -> void:
 	if time_start:
 		seconds += 1 * delta

@@ -149,3 +149,31 @@ func reset_velocity():
 	
 func set_tree_transition_request(transition):
 	crash_animation_tree["parameters/Transition/transition_request"] = transition
+
+
+func check_box_collision():
+	var is_jumping_state = true if current_state == states["Jumping"] else false
+	var is_bumping_state = true if current_state == states["FallAttack"] else false
+	var is_dashing_state = true if current_state == states["Dash"] else false
+	var is_falling_state = true if current_state == states["Falling"] else false
+	var is_attacking_state = true if current_state == states["Attacking"] else false
+	var is_falling_attack = true if current_state == states["FallAttack"] else false
+	
+	var all_checking_states= ( 
+			is_jumping_state or 
+			is_bumping_state or 
+			is_dashing_state or 
+			is_falling_state or 
+			is_attacking_state or 
+			is_falling_state or 
+			is_falling_attack
+	)
+	
+	if all_checking_states:
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+			match collider.name:
+				"NormalBox":
+					collider.destroy_box()
+					

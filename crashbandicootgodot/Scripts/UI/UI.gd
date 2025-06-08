@@ -6,6 +6,7 @@ extends Control
 
 @onready var wumpas = get_tree().get_nodes_in_group("Wumpa")
 
+
 func _ready() -> void:
 	_connect_wumpas_signal()
 	GameManager.fruits_to_life.connect(play_life_animation)

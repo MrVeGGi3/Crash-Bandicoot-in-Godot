@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_83sc6"]
 [ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="2_qeok4"]
-[ext_resource type="PackedScene" uid="uid://dder4xt5uwasw" path="res://Models/WumpaFruit/Wumpa/Wumpa.tscn" id="3_lthcy"]
+[ext_resource type="PackedScene" uid="uid://dder4xt5uwasw" path="res://Scenes/Wumpa/Wumpa.tscn" id="3_lthcy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp0mo"]
 albedo_color = Color(0.298308, 0.832431, 0.606883, 1)

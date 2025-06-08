@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_jwvk0"]
 
 [node name="Wumpa" type="Area3D" groups=["Wumpa"]]
-transform = Transform3D(1.32487, 0, 0, 0, 1.32487, 0, 0, 0, 1.32487, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 collision_layer = 4
 script = ExtResource("1_jwvk0")
 
