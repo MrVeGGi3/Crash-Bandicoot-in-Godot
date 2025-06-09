@@ -14,6 +14,8 @@ var minutes
 var seconds
 var time_start : bool = false
 
+@onready var boxes_on_scene : Array = get_tree().get_nodes_in_group("Box")
+
 func add_box():
 	boxes_collected += 1
 func add_fruits():
@@ -50,3 +52,6 @@ func _process(delta: float) -> void:
 			hours += 1
 			minutes = 0
 	
+func connect_ui_interface(node : NodePath):
+	for box in boxes_on_scene:
+		box.status_ui = get_node(node)

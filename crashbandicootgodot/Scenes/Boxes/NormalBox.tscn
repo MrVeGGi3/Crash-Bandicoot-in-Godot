@@ -298,11 +298,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kg5hb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uqh7d"]
-size = Vector3(1.96251, 1.96948, 1.99176)
+size = Vector3(1.96251, 1.96948, 1.93729)
 
-[node name="NormalBox" type="StaticBody3D"]
+[node name="NormalBox" type="Node3D" groups=["Box", "NormalBox"]]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 0, 0)
-collision_layer = 8
 script = ExtResource("1_uqh7d")
 
 [node name="DestructionTimer" type="Timer" parent="."]
@@ -356,9 +355,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299413, -0.347119, 0.34185
 mesh = SubResource("ArrayMesh_ah40e")
 skeleton = NodePath("")
 
-[node name="StaticBodyCollisionShape" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+
+[node name="StaticBodyCollisionShape" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00771344, 0.0223389, 0.0110779)
 shape = SubResource("BoxShape3D_uqh7d")
-debug_color = Color(0.891694, 0.000239114, 0.789446, 0.42)
+debug_color = Color(0, 0.5562, 0.901368, 0.42)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+
+[node name="Area3DCollisionShape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.18122, 0, 0, 0, 1.18122, 0, 0, 0, 1.18122, -0.00771344, 0.0223389, 0.0551453)
+shape = SubResource("BoxShape3D_uqh7d")
+debug_color = Color(0, 0.5562, 0.901368, 0.42)
 
 [connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

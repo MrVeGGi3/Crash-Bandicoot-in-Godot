@@ -3,17 +3,20 @@ class_name CrashBandicootState
 
 @export_group("Crash Properties")
 @export var speed : float = 100.0
-@export var acceleration : float = 100.0
-@export var jump_force : float = 100.0
-@export var dash_speed : float = 150.0
+@export var acceleration : float = 20.0
+@export var jump_force : float = 50.0
+@export var dash_speed : float = 50.0
 @export var bump_speed : float = -50.0
-@export var bump_impulse : float = 40.0
+@export var bump_impulse : float = 50.0
 @export var rotation_speed : float = 12.0
 @export var gravity : float = -120.0
+
+
 
 @onready var crash_animation_tree: AnimationTree = $CrashAnimationTree
 @onready var crash_animation : AnimationPlayer = %CrashAnimationPlayer
 @onready var _skin : Node3D = %CrashAnimations
+
 
 @export_group("Movement")
 var _camera_input_direction := Vector2.ZERO
@@ -31,6 +34,10 @@ var current_state : State
 
 var conditions = ["idle", "walk", "jump", "dash", "fall", "fall_a", "felt", "attack"]
 
+@export_group("Box Colliding Manager")
+var collider : String
+var all_checking_states
+@export var is_colliding_with_boxes : bool = false
 
 func _ready() -> void:
 	_load_states()
@@ -114,6 +121,7 @@ func move_character() -> void:
 
 func apply_gravity(delta: float) -> void:
 	velocity.y += gravity * delta
+	move_and_slide()
 
 func play_animation(anim: String) -> void:
 	crash_animation.play(anim)
@@ -151,29 +159,25 @@ func set_tree_transition_request(transition):
 	crash_animation_tree["parameters/Transition/transition_request"] = transition
 
 
-func check_box_collision():
-	var is_jumping_state = true if current_state == states["Jumping"] else false
+func check_box_collision_state() -> bool:
 	var is_bumping_state = true if current_state == states["FallAttack"] else false
 	var is_dashing_state = true if current_state == states["Dash"] else false
 	var is_falling_state = true if current_state == states["Falling"] else false
 	var is_attacking_state = true if current_state == states["Attacking"] else false
-	var is_falling_attack = true if current_state == states["FallAttack"] else false
 	
-	var all_checking_states= ( 
-			is_jumping_state or 
-			is_bumping_state or 
-			is_dashing_state or 
-			is_falling_state or 
-			is_attacking_state or 
-			is_falling_state or 
-			is_falling_attack
-	)
-	
-	if all_checking_states:
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var collider = collision.get_collider()
-			match collider.name:
-				"NormalBox":
-					collider.destroy_box()
+	if collider == "NormalBox":
+		all_checking_states= ( 
+				is_bumping_state or 
+				is_dashing_state or 
+				is_falling_state or 
+				is_attacking_state or 
+				is_falling_state 
+		)
+
+	return all_checking_states
+					
+				
+					
+func is_colliding_box():
+	return is_colliding_with_boxes
 					

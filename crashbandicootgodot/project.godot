@@ -21,6 +21,7 @@ GameManager="*res://Scripts/GameManager/GameManager.gd"
 [global_group]
 
 Wumpa=""
+Box=""
 
 [input]
 

@@ -5,6 +5,8 @@ extends Control
 @onready var life_collected_animator: AnimationPlayer = %LifeCollectedAnimator
 
 @onready var wumpas = get_tree().get_nodes_in_group("Wumpa")
+@onready var wumpa_fruit: Control = $WumpaFruit
+@onready var crash_lifes: Control = $CrashLifes
 
 
 func _ready() -> void:
@@ -33,3 +35,7 @@ func play_life_animation():
 func _connect_wumpas_signal():
 	for wumpa in wumpas:
 		wumpa.wumpa_collected.connect(play_fruit_animation)
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("show"):
+		show_ui_status()

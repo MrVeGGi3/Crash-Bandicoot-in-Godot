@@ -8,9 +8,8 @@ func enter() -> void:
 func physics_update(delta : float) -> void:
 	char_owner.apply_gravity(delta)
 	char_owner.move_character()
-	char_owner.check_box_collision()
 
-	if char_owner.is_on_floor():
+	if char_owner.is_on_floor() and not char_owner.is_colliding_box():
 		char_owner.change_state("Felt")
 	elif char_owner.is_attacking():
 		char_owner.change_state("Attacking")

@@ -7,9 +7,7 @@ func enter() -> void:
 	print("Estou no Estado de Dash")
 	
 func physics_update(delta: float) -> void:
-	char_owner.check_box_collision()
 	char_owner.apply_gravity(delta)
-	char_owner.move_and_slide()
 
 	if not char_owner.is_animation_playing():
 		if char_owner.is_on_floor():

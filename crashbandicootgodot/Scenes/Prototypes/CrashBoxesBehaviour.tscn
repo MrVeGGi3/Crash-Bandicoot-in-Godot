@@ -31,13 +31,33 @@ material_override = SubResource("StandardMaterial3D_ium2y")
 mesh = SubResource("BoxMesh_3p857")
 
 [node name="CrashBandicoot" parent="." instance=ExtResource("1_3p857")]
-transform = Transform3D(0.363871, 0, 0, 0, 0.363871, 0, 0, 0, 0.363871, 0, 0, 17.6295)
-floor_block_on_wall = false
-platform_floor_layers = 4294967049
-
-[node name="NormalBox" parent="." node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
-transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 6.16819, 0)
-status_ui = NodePath("../StatsUi")
-fruits_to_instantiate = 2
+transform = Transform3D(0.363871, 0, 0, 0, 0.363871, 0, 0, 0, 0.363871, 32.2273, 0, 33.5563)
 
 [node name="StatsUi" parent="." instance=ExtResource("3_bu8sk")]
+
+[node name="Boxes" type="Node3D" parent="."]
+
+[node name="NormalBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 6.16819, 0)
+status_ui = NodePath("../../StatsUi")
+fruits_to_instantiate = 2
+
+[node name="NormalBox2" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 19.701, 6.16819, 0)
+status_ui = NodePath("../../StatsUi")
+fruits_to_instantiate = 2
+
+[node name="NormalBox3" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, -23.6069, 6.16819, 0)
+status_ui = NodePath("../../StatsUi")
+fruits_to_instantiate = 2
+
+[node name="NormalBox4" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 2.57114, 6.16819, 34.4434)
+status_ui = NodePath("../../StatsUi")
+fruits_to_instantiate = 2
+
+[node name="NormalBox5" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("2_bu8sk")]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 2.57114, 6.16819, -32.4089)
+status_ui = NodePath("../../StatsUi")
+fruits_to_instantiate = 2

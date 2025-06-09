@@ -3,7 +3,9 @@ extends Box
 
 @onready var normal_box_fracture: Node3D = $NormalBoxFracture
 @onready var destruction_timer: Timer = $DestructionTimer
-@onready var static_body_collision_shape: CollisionShape3D = $StaticBodyCollisionShape
+@onready var static_body_collision_shape: CollisionShape3D = $StaticBody3D/StaticBodyCollisionShape
+@onready var area_3d_collision_shape: CollisionShape3D = $Area3D/Area3DCollisionShape
+
 @export var status_ui : Control 
 
 const WUMPA = preload("res://Scenes/Wumpa/Wumpa.tscn")
@@ -23,9 +25,17 @@ func instantiate_fruits(quantity : int) -> void:
 			wumpa_instance.global_position = global_position - add_position
 			wumpa_instance.wumpa_collected.connect(status_ui.play_fruit_animation)
 
-func destroy_box():
+func destroy_box(crash_body : CrashBandicootState):
 	print("Estou Destruíndo a Caixa")
-	static_body_collision_shape.disabled = true
+	static_body_collision_shape.call_deferred("set_disabled", true)
 	add_rb_in_tree(normal_box_fracture)
 	instantiate_fruits(fruits_to_instantiate)
+	crash_body.is_colliding_with_boxes = false
 	destruction_timer.start()
+	
+func _on_area_3d_body_entered(body: CrashBandicootState) -> void:
+	body.collider = "NormalBox"
+	if body.check_box_collision_state():
+		body.is_colliding_with_boxes = true
+		area_3d_collision_shape.disabled
+		destroy_box(body)

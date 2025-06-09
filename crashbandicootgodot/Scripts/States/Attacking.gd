@@ -6,7 +6,6 @@ func enter() -> void:
 	char_owner.play_animation("CrashAttack")
 	
 func physics_update(delta : float) -> void:
-	char_owner.check_box_collision()
 	char_owner.apply_gravity(delta)
 	char_owner.move_character()
 	

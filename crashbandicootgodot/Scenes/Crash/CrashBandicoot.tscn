@@ -2585,6 +2585,7 @@ script = ExtResource("1_8bsdi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.937, 29.414, 0)
 shape = SubResource("CapsuleShape3D_gc45b")
+debug_color = Color(0.957318, 0, 0.533218, 0.42)
 
 [node name="CrashAnimations" type="Node3D" parent="CollisionShape3D"]
 unique_name_in_owner = true
@@ -2785,7 +2786,7 @@ mesh = SubResource("ArrayMesh_mnpig")
 skeleton = NodePath("")
 
 [node name="Torso1" type="Node3D" parent="CollisionShape3D/CrashSpinning"]
-transform = Transform3D(0.880372, -0.0451704, 0.472128, 0.0314499, 0.998823, 0.0369173, -0.47324, -0.0176525, 0.880757, 0, 108.421, 0)
+transform = Transform3D(0.880372, -0.0451704, 0.472128, 0.0314499, 0.998823, 0.0369172, -0.47324, -0.0176525, 0.880757, 0, 108.421, 0)
 
 [node name="Foot1" type="Node3D" parent="CollisionShape3D/CrashSpinning"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57.8099, 0)
