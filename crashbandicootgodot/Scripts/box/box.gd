@@ -5,15 +5,12 @@ extends Node3D
 const PARTICLE_RIGIBODY = preload("res://Scenes/Boxes/particle_rigibody.tscn")
 
 ##Transform Meshes into Rigidbodys to fragment the collision effect
-@export var activate_rb_particles : bool = false
-
-
+var type_box_name : String
 
 func add_rb_in_tree(root : Node):
 	var meshes = get_all_mesh_instances(root)
 	for mesh in meshes:
 		instantiate_rb_particle(mesh)
-	activate_rb_particles = true
 		
 func instantiate_rb_particle(mesh : MeshInstance3D):
 	var rigid_instance = PARTICLE_RIGIBODY.instantiate()

@@ -11,7 +11,7 @@ func physics_update(delta: float) -> void:
 	char_owner.apply_gravity(delta)
 	
 	
-	if char_owner.is_on_floor() and not char_owner.is_colliding_box():
+	if char_owner.is_on_floor():
 		print("Estou colidindo com o chão")
 		char_owner.change_state("Idle")
 		

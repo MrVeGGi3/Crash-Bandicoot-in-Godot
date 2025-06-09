@@ -165,14 +165,19 @@ func check_box_collision_state() -> bool:
 	var is_falling_state = true if current_state == states["Falling"] else false
 	var is_attacking_state = true if current_state == states["Attacking"] else false
 	
-	if collider == "NormalBox":
-		all_checking_states= ( 
-				is_bumping_state or 
-				is_dashing_state or 
-				is_falling_state or 
-				is_attacking_state or 
-				is_falling_state 
-		)
+	match collider:
+		"NormalBox":
+			all_checking_states = ( 
+					is_bumping_state or 
+					is_dashing_state or 
+					is_falling_state or 
+					is_attacking_state
+			)
+		"ChainBox":
+			all_checking_states = (
+				is_bumping_state
+			)
+	
 
 	return all_checking_states
 					
