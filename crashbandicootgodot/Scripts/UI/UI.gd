@@ -1,3 +1,4 @@
+class_name UIControl
 extends Control
 
 @onready var active_ui_timer: Timer = $ActiveUITimer

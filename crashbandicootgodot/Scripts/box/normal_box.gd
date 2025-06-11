@@ -1,12 +1,9 @@
 class_name NormalBox
 extends Box
 
-var box_fracture: Node3D 
 @onready var destruction_timer: Timer = $DestructionTimer
 @onready var static_body_collision_shape: CollisionShape3D = $StaticBody3D/StaticBodyCollisionShape
 @onready var area_3d_collision_shape: CollisionShape3D = $Area3D/Area3DCollisionShape
-
-@export var status_ui : Control 
 
 const WUMPA = preload("res://Scenes/Wumpa/Wumpa.tscn")
 var add_position = Vector3(0,-10, 0)
@@ -43,5 +40,5 @@ func check_collision_to_destroy(body : CrashBandicootState, mesh : Node3D):
 	body.collider = type_box_name
 	if body.check_box_collision_state():
 		body.is_colliding_with_boxes = true
-		area_3d_collision_shape.disabled
+		area_3d_collision_shape.call_deferred("set_disabled", true)
 		destroy_box(body, mesh)

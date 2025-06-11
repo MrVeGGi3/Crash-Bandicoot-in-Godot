@@ -2579,7 +2579,7 @@ node_connections = [&"IdleTimeScale", 0, &"CrashIdle", &"Transition", 0, &"WalkB
 
 [node name="CrashBandicoot" type="CharacterBody3D"]
 transform = Transform3D(0.363871, 0, 0, 0, 0.363871, 0, 0, 0, 0.363871, 0, 0, 0)
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_8bsdi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -2786,7 +2786,7 @@ mesh = SubResource("ArrayMesh_mnpig")
 skeleton = NodePath("")
 
 [node name="Torso1" type="Node3D" parent="CollisionShape3D/CrashSpinning"]
-transform = Transform3D(0.880372, -0.0451704, 0.472128, 0.0314499, 0.998823, 0.0369173, -0.47324, -0.0176525, 0.880757, 0, 108.421, 0)
+transform = Transform3D(0.880372, -0.0451704, 0.472128, 0.0314499, 0.998823, 0.0369172, -0.47324, -0.0176525, 0.880757, 0, 108.421, 0)
 
 [node name="Foot1" type="Node3D" parent="CollisionShape3D/CrashSpinning"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 57.8099, 0)
@@ -2871,3 +2871,6 @@ parameters/Transition/transition_request = ""
 parameters/Transition/current_index = 1
 parameters/WalkBlend/blend_amount = 0.0
 parameters/WalkTimeScale/scale = 2.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true

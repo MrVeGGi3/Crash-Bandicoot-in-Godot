@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://c0ahnkm45rt72"]
 
-[ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_ntrby"]
-[ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="2_cycqr"]
-[ext_resource type="PackedScene" uid="uid://bifc0ajyanq4" path="res://Scenes/Boxes/NormalBox.tscn" id="3_hro7x"]
-[ext_resource type="PackedScene" uid="uid://db30cmrvg4uj3" path="res://Scenes/Boxes/ChainBox.tscn" id="4_fx8uk"]
-[ext_resource type="PackedScene" uid="uid://b10j42moqambp" path="res://Scenes/Boxes/LifeBox.tscn" id="5_jiqtb"]
-[ext_resource type="PackedScene" uid="uid://beqgbb7aflmb" path="res://Scenes/Boxes/NitroBox.tscn" id="6_qcng4"]
-[ext_resource type="PackedScene" uid="uid://di1v4avjyl1gs" path="res://Scenes/Boxes/RedBox.tscn" id="7_vcb4i"]
+[ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_u0fao"]
+[ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="2_6osea"]
+[ext_resource type="PackedScene" uid="uid://bifc0ajyanq4" path="res://Scenes/Boxes/NormalBox.tscn" id="3_5e8cp"]
+[ext_resource type="PackedScene" uid="uid://db30cmrvg4uj3" path="res://Scenes/Boxes/ChainBox.tscn" id="4_kcui4"]
+[ext_resource type="PackedScene" uid="uid://b10j42moqambp" path="res://Scenes/Boxes/LifeBox.tscn" id="5_33eu4"]
+[ext_resource type="PackedScene" uid="uid://beqgbb7aflmb" path="res://Scenes/Boxes/NitroBox.tscn" id="6_ydpjg"]
+[ext_resource type="PackedScene" uid="uid://di1v4avjyl1gs" path="res://Scenes/Boxes/RedBox.tscn" id="7_wv6wn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3fsbx"]
 size = Vector3(100, 1, 100)
@@ -34,29 +34,29 @@ shape = SubResource("BoxShape3D_3fsbx")
 material_override = SubResource("StandardMaterial3D_ium2y")
 mesh = SubResource("BoxMesh_3p857")
 
-[node name="CrashBandicoot" parent="." instance=ExtResource("1_ntrby")]
+[node name="CrashBandicoot" parent="." instance=ExtResource("1_u0fao")]
 transform = Transform3D(0.363871, 0, 0, 0, 0.363871, 0, 0, 0, 0.363871, 32.2273, 0, 33.5563)
 
-[node name="StatsUi" parent="." instance=ExtResource("2_cycqr")]
+[node name="StatsUi" parent="." instance=ExtResource("2_6osea")]
 
 [node name="Boxes" type="Node3D" parent="."]
 
-[node name="NormalBox2" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("3_hro7x")]
+[node name="NormalBox2" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("3_5e8cp")]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 19.701, 6.16819, 0)
 fruits_to_instantiate = 2
 status_ui = NodePath("../../StatsUi")
 
-[node name="ChainBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("4_fx8uk")]
+[node name="ChainBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("4_kcui4")]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 7.75419, -29.2078)
 status_ui = NodePath("../../StatsUi")
 
-[node name="LifeBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("5_jiqtb")]
+[node name="LifeBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("5_33eu4")]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 5.78042, 29.0837)
 status_ui = NodePath("../../StatsUi")
 
-[node name="NitroBox" parent="Boxes" instance=ExtResource("6_qcng4")]
+[node name="NitroBox" parent="Boxes" instance=ExtResource("6_ydpjg")]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 6.94103, 0)
 
-[node name="RedTNTBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("7_vcb4i")]
+[node name="RedTNTBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("7_wv6wn")]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, -11.6138, 5.869, 0)
 status_ui = NodePath("../../StatsUi")

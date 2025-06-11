@@ -1,0 +1,300 @@
+[gd_scene load_steps=19 format=4 uid="uid://b10j42moqambp"]
+
+[ext_resource type="Script" uid="uid://72e3y3kxmfa3" path="res://Scripts/box/life_box.gd" id="1_f8jex"]
+[ext_resource type="Texture2D" uid="uid://sumdj86m7hyl" path="res://Models/Boxes/LifeBox/LifeBoxFractured_CrashLife.png" id="2_ijrpb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5o5p5"]
+resource_name = "LifeMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("2_ijrpb")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_85hos"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5xn5a"]
+resource_name = "LifeBoxFractured_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("//YAAP8I////CAAA//b////2////CAAA//YAAP8I////CP////YAAP8IAAD/9v///wgAAP/2////9gAA/wj////2////CAAA//YAAP8I////CP////YAAP8IAAD/9v//"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA/78AAP//////vwAA//8AAP+//////////7///wAA//8AgAAA/////wCA////////AIAAAAAA//8AgAAAAAD//wAAAAD//wAAAAAAAP////8AAAAAAAAAAAAAAAAAAAAA/z///wAA////P///AAAAAP8/AAAAAP///z///wAAAAD/v/////////+//////wAA/7///wAA////vwAAAAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAA////f////3////9/////f/9/////f////3////9/////P/9//z//f/8//3//P/9/AAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD///9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_85hos")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_21w07"]
+_surfaces = [{
+"aabb": AABB(-0.516298, -0.511563, -0.328265, 1.12195, 1.19118, 1.07635),
+"format": 34359742465,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAgADAAAAAwAEAAEABAACAAEABAADAAUABQAGAAQABwAEAAYABQAHAAYABwACAAQACAADAAIABQAJAAcACQAKAAcABQADAAsAAwAIAAsACQAFAAwACQAMAAoADQAHAAoAAgAHAA0ADAANAAoAAgANAA4ACAACAA4ADwAOAA0ADwAIAA4ADAAPAA0ADAAFABAABQALABAACwAMABAADAARAA8ACwARAAwACAAPABEAEQALABIACwAIABIAEgAIABEA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("TFLQvpP7LT++7Zq+OAwbPxb0n77WVZ6+OAwbP5P7LT8ajZC+xJ3mvpP7LT+aWZu+OAwbPyTgub5aAp++9FKRvixly75SEqi+OAwbP2pN0742xoe+OAwbP8Yb1r4CMYW+GPjpvpP7LT90gj8/GO6Svu9HAL+0cW6+OAwbP4Lf1b6eeoC+rtHrvpP7LT9qcZu+IywEv8/1Ar9A3RG8OAwbP/TVu750gj8/OAwbP5P7LT90gj8/CyoDv/LL8b50gj8/tjMAv7i+LL6GCKe+uXkCvzLD1L50gj8/eMHrvpP7LT8CJoO+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cwqm7"]
+resource_name = "LifeBoxFractured_Cube_001_cell_006"
+_surfaces = [{
+"aabb": AABB(-0.516298, -0.511563, -0.328265, 1.12195, 1.19118, 1.07635),
+"attribute_data": PackedByteArray("jjN0PwAAgD+m5DY9AACAPxUudD+QHLs94thYPQAAgD8AAIA/ELo2PQAAgD8AAIA/oOQ2PbaRdD+NM3Q/MMc8PQAAAAAAAIA/AACAPyA0ZT0AAIA/AACAP16UdD8gujY9AAAAAAAAgD/PKHU/QPdrPZMjdT8AAIA/BAx8PQAAgD/iRHU/4LErPSVZdT+LVnQ/ANQ4PcBydD8AAIA/AACAP5IjdT/gxi09AACAPzARWD0AAAAAAACAPwAAgD8AAIA/7X5yPzARWD0AAIA/0MlYPQAAAAAAAIA/AAAAAAAAgD9hc3I/8MlYPXFycj8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AACAP8BydD+9rHE/MDRlPQAAgD/wsSs9AAAAAAAAgD9AP3A/AACAPwAAAAAAAIA/LTzwPtbE8j5RGPE+AACAP7ZD8D6K6v4+TqfyPr7Q8j4AAHc/ADf4PmME/T6sBvM+AAB3PwAAgD9RGPE+AAAAAI7p4z7GcBM/eo3kPpYuDD8AAHc/AAAAAAAAdz9G8wU/cJ4DPwAAAAAIABA9RvMFPwgAED0AAAAAiPoAP7uEDD9IxP8+qnUMP7H6Bj/SdQU/l9IGP571/T41lAE/JNELPw=="),
+"format": 34359742487,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABAADAAYABAAGAAcACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AHgAfACAAIQAiACMAJAAlACYAJQAkACcAJwAkACgAJQAnACkAKgArACwALQArACoAKwAtAC4ALgAtAC8AKwAuADAAMQAyADMAMgAxADQAMgA0ADUANgA3ADgANgA5ADcANwA5ADoAOQA2ADsAOwA2ADwAOQA7AD0A"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("TFLQvpP7LT++7Zq+OAwbPxb0n77WVZ6+OAwbP5P7LT8ajZC+OAwbPyTgub5aAp++xJ3mvpP7LT+aWZu+9FKRvixly75SEqi+OAwbPxb0n77WVZ6+TFLQvpP7LT++7Zq+9FKRvixly75SEqi+rtHrvpP7LT9qcZu+tjMAv7i+LL6GCKe+xJ3mvpP7LT+aWZu+IywEv8/1Ar9A3RG8OAwbP/TVu750gj8/OAwbP4Lf1b6eeoC+CyoDv/LL8b50gj8/eMHrvpP7LT8CJoO+GPjpvpP7LT90gj8/uXkCvzLD1L50gj8/GO6Svu9HAL+0cW6+OAwbP4Lf1b6eeoC+OAwbP8Yb1r4CMYW+IywEv8/1Ar9A3RG89FKRvixly75SEqi+OAwbP8Yb1r4CMYW+OAwbP2pN0742xoe+GO6Svu9HAL+0cW6+9FKRvixly75SEqi+OAwbP2pN0742xoe+OAwbPyTgub5aAp++GO6Svu9HAL+0cW6+9FKRvixly75SEqi+IywEv8/1Ar9A3RG8IywEv8/1Ar9A3RG89FKRvixly75SEqi+tjMAv7i+LL6GCKe+uXkCvzLD1L50gj8/rtHrvpP7LT9qcZu+eMHrvpP7LT8CJoO+IywEv8/1Ar9A3RG8CyoDv/LL8b50gj8/tjMAv7i+LL6GCKe+rtHrvpP7LT9qcZu+GPjpvpP7LT90gj8/eMHrvpP7LT8CJoO+xJ3mvpP7LT+aWZu+OAwbP5P7LT8ajZC+TFLQvpP7LT++7Zq+OAwbP5P7LT90gj8/GPjpvpP7LT90gj8/CyoDv/LL8b50gj8/uXkCvzLD1L50gj8/OAwbP5P7LT90gj8/OAwbP/TVu750gj8/OAwbP5P7LT8ajZC+OAwbP/TVu750gj8/OAwbP5P7LT90gj8/OAwbP8Yb1r4CMYW+OAwbP4Lf1b6eeoC+OAwbPyTgub5aAp++OAwbPxb0n77WVZ6+OAwbP2pN0742xoe+rvyM/Y4/kN+u/Iz9jj+Q3678jP2OP5Dfz/yu/aYEd7zP/K79pwR3vM/8rv2nBHe8z/yu/aYEd7zP/K79pwR3vNT8zP3yQa7g1PzM/fJBruDU/Mz98kGu4NT8zP3yQa7gjIpCEKGA4DyMikIQoYDgPIyKQhDG97vOjIpCEKGA4DxJBtuF4IUH/UkG24XghQf9SQbbheCFB/2PiicQG/1Z4I+KJxAb/Vngj4onEBv9WeCPiicQG/1Z4FrEjwNSvgH/WsSPA1K+Af9axI8DUr4B/1rEjwNSvgH/lsSUA/D4UsKWxJQD8PhSwpbElAPw+FLCVChiKrNAjb5UKGIqs0CNvlQoYiqzQI2+CyibKgy/h/4LKJsqDL+H/gsomyoMv4f+GQbIhZiA8cIZBsiFi38puBkGyIX8fpWyGQbIhZuAEsMZBsiFnIAkwxkGyIX///8//3///////7//f///////v/9//////wDA/3///////7//f///////v/9////+//+//3///////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+/////f///AID///9//////////3//////////f/7/AID///9//////////3/+/wCA////f9r///////9/+f///w==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_21w07")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hg30a"]
+_surfaces = [{
+"aabb": AABB(-1.00953, -0.668673, -0.429014, 1.9451, 1.07658, 0.967366),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAQAAgAFAAQABAAFAAAAAwAFAAIAAAAGAAEABgADAAEABwAAAAUAAAAIAAYAAAAHAAgACQAGAAgABQAKAAcABQADAAoABwALAAgACQAIAAsABwAKAAsADAAGAAkABgAMAAMACwAMAAkACgADAA0ADQALAAoAAwAMAA0ACwANAAwA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("R26TNm70AACAAP//DCEAAIwA//+YIwAAUgD//5AVAACec///dPoAAAn+///r/wAA+YoAANjzAAD///////8AAP//FwiS+AAAOoWfAwAAAAD/////AAAAAP//QAwAAAAAm1KCYwAAAAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k22qc"]
+resource_name = "LifeBoxFractured_Cube_001_cell_007"
+_surfaces = [{
+"aabb": AABB(-1.00953, -0.668673, -0.429014, 1.9451, 1.07658, 0.967366),
+"attribute_data": PackedByteArray("AAD/////lPSp8f////8AAECj/////wAA///d8pQL//9qC5T0wA1K/f////9WDv//hg148v//AAD//wAA//+p8WcOl/H//5fxVg6o8f//AAD//5QL//9Aox1oZqMhDd3y//948hXzEvP//wAA4YMAAP/2NIM4h3KF//YAADr1yHv/9gAA//bSe9MPbQqIDwAABxA3ERJ4I3n8D/wPiA8AAP/2NIP/9gAAOFo8VP6H2Yc="),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABQAHAAgACQAKAAsACgAJAAwACgAMAA0ADgAPABAAEQASABMAFAAVABYAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIAAiACMAIgAfACQAJAAfACUAIgAkACYAJwAoACkAKAAnACoAKAAqACsA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("R26TNm70c/mAAP//DCFz+YwA//+YI3P5+YoAANjzc/mbUoJjAAD2xvmKAADY8/bGOoWfAwAA9sZSAP//kBX2xoAA//8MIfbG////////HuJHbpM2bvSS8An+///r/x7l//8XCJL4neT5igAA2PM/+UdukzZu9M//jAD//5gjz/+ec///dPrP/55z//90+v//Cf7//+v///9HbpM2bvT//1IA//+QFZTFm1KCYwAAlMUAAP//AACUxTqFnwMAACvE//8XCJL4PMT//0AMAAAjwvmKAADY8z7H/////////7///0AMAAD/v///FwiS+P+//////wAA/78J/v//6///v/////8AAP+//////////79SAP//kBX/vwAA//8AAP+/jAD//5gj/7+ec///dPr/v4AA//8MIf+/AAD//wAAAAD//0AMAAAAAP////8AAAAAm1KCYwAAAAA6hZ8DAAAAAKbXG96m1xveptcb3qbXG97WOgGa1joBmtY6AZrWOgGa1joBmit+w35+fol+PX63fjp+uX41/vT+Zv/sI2b/7CNm/+wjxX5hfsV+X37Ffl9+ZDtenWQ7Xp1kO16dnhXxrcwVSK5cDhegtBuOuf9/AAD/fwAA/38AAP9/AAD///9/////f////3/+//9/////f/7//3////9/xf+Mf////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hg30a")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x0ga6"]
+_surfaces = [{
+"aabb": AABB(-0.335195, -1.1823, -1.14201, 0.935808, 2, 1.86492),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEABAABAAMAAAAFAAMABQAEAAMAAgAGAAAABQAAAAYABAAHAAIABgACAAcACAAHAAQABQAJAAQABAAJAAgABwAIAAoACQAKAAgABwAKAAsABgAHAAsACgAGAAsADAAKAAkABgAKAAwACQAFAAwABQAGAA0ABgAMAA0ABQANAAwA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("ypMLP/qeq75VEDk/deaPvoxVl79nDDc/ghOQvoxVl79VEDk/MmgKP0JVv74gdga97WOpvoxVl7/I9jY/1FoOP6AA77yYqLS+xsEZP+ZUUT9VEDk/rZ6rvoxVl79VEDk/rZ6rvkWhDz/mXWe/MfWnvuZUUT92LZK/rZ6rvuZUUT+CKpK/rZ6rvuZUUT9VEDk/bhWOvuZUUT/qJ5K/BtkYP+ZUUT/0dqi+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ja04o"]
+resource_name = "LifeBoxFractured_Cube_001_cell_001"
+_surfaces = [{
+"aabb": AABB(-0.335195, -1.1823, -1.14201, 0.935808, 2, 1.86492),
+"attribute_data": PackedByteArray("AACAP2ghgD2oeW89AACAPwWmbT3RnH0/AACAPwAAgD+ObXY9AACAP+m48D4AAAAAKYrjPjKSEz8IABA9AACAPwgAED0AAAAANW1wPQAAgD8AAIA/oHlvPQAAgD8AAIA/1PtvP2AhgD0AAAAAAACAPwAAgD8AAAAApHB0P2xhdT9cnHE/AACAPwAAAAAAAIA/XZxxPzA6Zj1rv3E/AACAPwAAgD8j6nk/o5xgP6vpeT8AAIA/IKJaPyC8wjwf6nk/AACAPwAAgD9iCWQ9AACAP8pTXD2YXHU/iHcVPh6iWj8AAIA/AAAAAAgAED2Yaoo96rjwPgAAgD8IABA9AACAP2vWfT1Yf4o9TZ4dPfhSij2H4O8+MLTyPoJKGD05834/lG12PQAAgD8YFXc9Cf5+PwgAED0AAIA/PpNKP0BnAz4IABA9AACAPyinHz0AAIA/HOpmPwAAAAAIABA9AAAAAA=="),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABQAHAAgACQAKAAsADAANAA4ADQAMAA8ADQAPABAAEQASABMAFAAVABYAFwAYABkAGAAXABoAGgAXABsAGAAaABwAHQAeAB8AHgAdACAAIAAdACEAHgAgACIAIwAkACUAIwAmACQAJwAoACkAKAAnACoAKAAqACsA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("ypMLP/qeq75VEDk/deaPvoxVl79nDDc/ghOQvoxVl79VEDk/MmgKP0JVv74gdga9ghOQvoxVl79VEDk/xsEZP+ZUUT9VEDk/ypMLP/qeq75VEDk/rZ6rvoxVl79VEDk/rZ6rvuZUUT9VEDk/7WOpvoxVl7/I9jY/deaPvoxVl79nDDc/MmgKP0JVv74gdga9ypMLP/qeq75VEDk/1FoOP6AA77yYqLS+MmgKP0JVv74gdga9xsEZP+ZUUT9VEDk/BtkYP+ZUUT/0dqi+1FoOP6AA77yYqLS+BtkYP+ZUUT/0dqi+bhWOvuZUUT/qJ5K/MfWnvuZUUT92LZK/rZ6rvuZUUT+CKpK/rZ6rvkWhDz/mXWe/MfWnvuZUUT92LZK/1FoOP6AA77yYqLS+bhWOvuZUUT/qJ5K/7WOpvoxVl7/I9jY/rZ6rvkWhDz/mXWe/MmgKP0JVv74gdga9rZ6rvuZUUT+CKpK/xsEZP+ZUUT9VEDk/rZ6rvuZUUT9VEDk/bhWOvuZUUT/qJ5K/MfWnvuZUUT92LZK/BtkYP+ZUUT/0dqi+7WOpvoxVl7/I9jY/ghOQvoxVl79VEDk/deaPvoxVl79nDDc/rZ6rvoxVl79VEDk/rZ6rvkWhDz/mXWe/rZ6rvoxVl79VEDk/7WOpvoxVl7/I9jY/rZ6rvuZUUT+CKpK/rZ6rvuZUUT9VEDk/Yb8lQnnU4ulhvyVCedTi6WG/JUJ51OLpYb8lQnnU4un/f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+/ecJuAFzVBel5wm4AXNUF6XnCbgBc1QXpIvq1efqCedwi+rV5G4Qh6SL6tXn///+/Ivq1efWDeuci+rV5vIV0++T+ID3lK2Tq5P4gPeUrZOrk/iA95Stk6jU90wC7/zG/NT3TALv/Mb81PdMAu/8xv3rCOQCsnw2nesI5APCbFKZ6wjkANKsNqnrCOQA3n+6mesI5APB/0556wjkAqdCT7f9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9/AAD///8//38AAP///z//fwAA////P/9/AAD///8/PgCAf/v/3n8+AIB/7f/efz4AgH/e/95/PgCAf/7/IAA+AIB//v8gAA==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_x0ga6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d3xpl"]
+_surfaces = [{
+"aabb": AABB(-1.04262, -0.393327, -0.577023, 1.94463, 0.952213, 1.00722),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAABAAMAAgAFAAAABAAAAAUAAgAGAAUABwAEAAUABwAFAAYABgACAAgABwAGAAgACAACAAEABAAHAAkABwAIAAoACAABAAoACQAHAAoABAAKAAEACgAEAAkA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 11,
+"vertex_data": PackedByteArray("//8AAOAAAAByiq7buQYAAOKBAAAaCAAA///18QAAAAD///////8AAP//AAD//wAAAAAAAP//AAB6AA0B//8AAB0AAACv/QAAs2yF4///AAArbPfY1z8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tu6mm"]
+resource_name = "LifeBoxFractured_Cube_001_cell_002"
+_surfaces = [{
+"aabb": AABB(-1.04262, -0.393327, -0.577023, 1.94463, 0.952213, 1.00722),
+"attribute_data": PackedByteArray("jA71/v///////zHx//+JDZYP////hCeDsQ/V/v/2////9oN/AAD//379hfUh8P////8AAHbyiQ39D//////+Dv////9pVHS6//8h8P0PAfD//wAA/g7/////AAD/////zQ4x8f8IHYZygP///wj//9uAzIz/9h2GBRB+/9lxrJP/9v//lg///w=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAEAAcABQAHAAgACQAKAAsACgAJAAwACgAMAA0ADgAPABAADgARAA8AEgATABQAFQAWABcAFQAYABYAGQAaABsAGQAcABoAHQAeAB8AHgAdACAAHgAgACEA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("//8AAOAA7/5yiq7buQbv/uKBAAAaCBIB///18QAA7/4AAAAA////P+KBAAAaCP8/HQAAAK/9/z///wAA////P///AADgAP8/K2z32Nc/dcn////////MzrNsheP//znUcoqu27kGg8T///XxAABNBXoADQH//3TTHQAAAK/9dNMrbPfY1z900wAAAAD//3TTs2yF4///Tsd6AA0B//9Oxyts99jXP07HHQAAAK/9XuByiq7buQbt4Cts99jXP5j04oEAABoIYeD/////////v///AADgAP+///8AAP///7////XxAAD/v////////wCAegANAf//AICzbIXj//8AgP//AAD//wCAAAAAAP//AIBnpEzcZ6RM3NKi3N1npEzcAAD/fwAA/38AAP9/AAD/fwAA/39gvQ6lebIoqkiq/a1Uz6ecBYDFwSH337Uh99+1IffftSH337WG4gW6huIFuobiBbrPjcbzwqC35oToRbV/g0r6/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d3xpl")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n7rsc"]
+_surfaces = [{
+"aabb": AABB(-0.440998, -1.07515, -0.585427, 1.11005, 2, 1.98989),
+"format": 34896613377,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEABQACAAQAAwACAAUABQAEAAEAAwAGAAAABgAHAAAAAQAAAAcAAwAIAAYABwAGAAgACAADAAkACAAKAAcAAQAHAAoACwAIAAkACwAKAAgADAAJAAMAAwAFAAwADAALAAkACwAMAA0ADAAFAA4ADAAOAA0ABQABAA8ADwAOAAUADwABAA4ADgABABAADQAOABEADQARAAsAEQAOABAAAQASABAAEQAQABIAEgALABEAAQAKABIACgALABIA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("AAAAAPn/AAAuympnzp8AAJEMAAD//wAAAAAAAAAAAAAB7QAAXoUAAA3wAAAJgwAAAABO5QUqAACXAf//HxEAAAAA//8dEQAAAAD//wAAAAC+Cf//IxEAAAoM//8AAAAAkuQAAAAAAADP9QF4AAAAAP//EXaSdgAA/v6waPWCAADDzUGTz3YAAPgM///oDwAACQ3//yMRAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lrrf3"]
+resource_name = "LifeBoxFractured_Cube_001_cell_003"
+_surfaces = [{
+"aabb": AABB(-0.440998, -1.07515, -0.585427, 1.11005, 2, 1.98989),
+"attribute_data": PackedByteArray("//8JBgAA//828cgO///a+Z31//+PH///JAb///X5CQYLD//////IDv/////fDv////8AAP////8LD/PwAAD/////AAD/////AAD/////AAD///////8AAKrx//8AAP////+d9f//JAb//48f6+Y1H///bwsAAP//qvFUDv////8tDeT/////////5vL//0YN/////wAA//+48kYNug8METYPAACxD9MPBg4NEf8IBxHSCQkR/wgAAOby//+P9G8LgfQAogAA//8q5wAA//b////2AAAg0LAaOQr//3wPs/7/CAAA/wiu/uOEAoNLg7KE8X4AADYPAADxfv//1of9h/8IAAD/CP//"),
+"format": 34896613399,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAQADAAQABQAGAAcACAAJAAoACwAMAA0ACwAOAAwADwAQABEAEgATABQAFQAWABcAFQAYABYAGQAaABsAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJwAoACkAKgAoACcAKAAqACsAKwAqACwAKAArAC0ALgAvADAALgAxAC8AMgAzADQAMwAyADUAMwA1ADYANwA4ADkAOAA3ADoAOgA3ADsAOAA6ADwAPQA+AD8APgA9AEAAPgBAAEEA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 66,
+"vertex_data": PackedByteArray("AAAAAPn/Ztguympnzp/F1pEMAAD//6bZlwH//x8Ruda+Cf//IxG61gAATuUFKkHGlwH//x8RQcYAAAAA+f9BxgHtAABehejPkQwAAP//6M8uympnzp/ozw3wAAAJg3TBLspqZ86fRcP+/rBo9YJRwwHtAABeheHA/v6waPWC7b4uympnzp/tvv//EXaSdu2+//8RdpJ2suIuympnzp+y4sPNQZPPdrLiLspqZ86fS9wJDf//IxFL3MPNQZPPdkvcvgn//yMRS9yXAf//HxFYxQAATuUFKljFAAD//x0RWMX4DP//6A//xsPNQZPPdv/GCQ3//yMR/8b//xF2knb/xpLkAAAAAAPo//8RdpJ2A+jP9QF4AAAYGA3wAAAJgwPo/v6waPWCLev//xF2knYt6w3wAAAJgy3rCQ3//yMR/78KDP//AAD/v/gM///oD/+/vgn//yMR/78AAP//HRH/v5cB//8fEf+/AAD//wAA/7/P9QF4AADux/gM///oD7HeCgz//wAA3+f//xF2knYexwAA//8dEQAAAAAAAAAAAAAAAP//AAAAAAAATuUFKgAAAAAAAPn/AACRDAAA////PwAAAAAAAP8/AAAAAPn//z8N8AAACYPzPwHtAABehc0rkuQAAAAA/z8KDP//AAAAAJLkAAAAAAAAz/UBeAAAAAAAAP//AAAAAAAAAAAAAAAAC+EUEkXh3hLg4HsRRuHjEkbh4xJ4m3iceJt4nHibeJzGFEAgxhRAIMYUQCD8HWIeuxywHrMcsh5kHkkeY8nNBWPJzQVjyc0FxyT9D8ck/Q/HJP0PbeApEG3gKRBt4CkQbeApEOubbZzrm22c65ttnEzFIGJMxSBiTMUgYkzFIGKrFN03qxTdN8gUzzerFN03m7PnZpuz52abs+dm/v//f/7//3+8/3t//v//f/7//3/+//9/////f+S3zRgjPw4NaDaeFUG44Rr/P/9//z//f/8//3//P/9//z//fxIA9n9OANh/AAD/fwoEE4j3Ke7TAAD/f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n7rsc")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2wg0"]
+_surfaces = [{
+"aabb": AABB(-0.582022, -0.587034, -0.620489, 1.00711, 0.973148, 1.01757),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwACAAQAAQAEAAIAAwAEAAUAAAADAAUAAQAGAAQABgAFAAQAAQAAAAcAAQAIAAYAAQAHAAgACQAGAAgABwAJAAgABgAJAAUACQAHAAAAAAAFAAoABQAJAAoACQAAAAoA"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 11,
+"vertex_data": PackedByteArray("JR6S8s3nAADNDAAA//8AAAAAAAAAAAAAGRN29gAAAAD//wAAAAAAAP////8AAAAA//8AADH6AABaHSzX7f8AAP//5+wo+QAA//8Q+qXtAAD//4H7X+wAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qpjdg"]
+resource_name = "LifeBoxFractured_Cube_001_cell_004"
+_surfaces = [{
+"aabb": AABB(-0.582022, -0.587034, -0.620489, 1.00711, 0.973148, 1.01757),
+"attribute_data": PackedByteArray("/////y4N///M/0QNAAD//7TySg278v//O/HDDv////8AAP/////DDmvykw2D8vD+/////4Ly/////wAA//938gAA////////fA3/////kw0lhT+C//YAACZ/AAD/9kt///8AAJQNvvKHDXfy//+78heIEoj/9v////Zvgyh/4/+WhlKGp4D//ySBuYz/9m+DMIeehf/2//8="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsACQAMAAoADQAOAA8ADQAQAA4AEQASABMAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIQAgACMAIwAgACQAIQAjACUA"),
+"material": SubResource("StandardMaterial3D_5o5p5"),
+"name": "LifeMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("JR6S8s3nyNTNDAAA///I1AAAAAAAAMjUJR6S8s3nRv0AAAAAAABG/RkTdvYAAEb9zQwAAP//reUlHpLyzeet5VodLNft/63lzQwAAP//J+H//+fsKPkn4f//AAAx+qgeWh0s1+3/J+H//xD6pe01nyUekvLN5zWf//+B+1/sNZ9aHSzX7f81n1odLNft/zX5//8Q+qXtNfn//+fsKPk1+c0MAAD///8///8AAAAA/z8AAAAAAAD/P///AAAx+v8/JR6S8s3nZer/////AAAw6///gftf7NjVGRN29gAA3/4ZE3b2AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAP//EPql7f+///8AADH6/7///+fsKPn/v/////8AAP+///+B+1/s/7///wAAAAD/vxnac9IZ2nPSGdpz0un9dD3p/XQ96f10PTfr5co36+XKN+vlyruBan+7gWp/u4Frf7uBan8G/cRlBv3EZQb9xGUG/cRlD4Ghow+BoaMPgaGjAAD/fwAA/38AAP9/AAD/f0fMxBbpyw4WrNbwKsd+0b74/waA+P8GgP///3/x/wyA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_y2wg0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqh7d"]
+size = Vector3(1.96251, 1.96948, 1.93729)
+
+[node name="LifeBox" type="Node3D" groups=["Box", "NormalBox"]]
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 0, 0)
+script = ExtResource("1_f8jex")
+
+[node name="DestructionTimer" type="Timer" parent="."]
+
+[node name="BrokeBoxSound" type="AudioStreamPlayer" parent="."]
+
+[node name="LifeBoxFractured" type="Node3D" parent="."]
+
+[node name="Cube_001" type="MeshInstance3D" parent="LifeBoxFractured"]
+mesh = SubResource("ArrayMesh_5xn5a")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394345, 0.32038, 0.251916)
+mesh = SubResource("ArrayMesh_cwqm7")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell_001" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0644299, 0.592092, -0.570986)
+mesh = SubResource("ArrayMesh_k22qc")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell_002" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.664805, 0.182298, 0.277095)
+mesh = SubResource("ArrayMesh_ja04o")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell_003" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.097985, -0.606673, 0.569798)
+mesh = SubResource("ArrayMesh_tu6mm")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell_004" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.559002, 0.0751455, -0.414573)
+mesh = SubResource("ArrayMesh_lrrf3")
+skeleton = NodePath("")
+
+[node name="Cube_001_cell_005" type="MeshInstance3D" parent="LifeBoxFractured"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.574912, -0.412966, -0.379511)
+mesh = SubResource("ArrayMesh_qpjdg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+
+[node name="StaticBodyCollisionShape" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00771344, 0.0223389, 0.0110779)
+shape = SubResource("BoxShape3D_uqh7d")
+debug_color = Color(0, 0.5562, 0.901368, 0.42)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+
+[node name="Area3DCollisionShape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.60222, 0, 0, 0, 1.60222, 0, 0, 0, 1.60222, -0.00771344, 0.0223389, 0.0551453)
+shape = SubResource("BoxShape3D_uqh7d")
+debug_color = Color(0, 0.5562, 0.901368, 0.42)
+
+[connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

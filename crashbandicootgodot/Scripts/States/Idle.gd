@@ -17,5 +17,7 @@ func physics_update(delta: float) -> void:
 		char_owner.change_state("Jumping")
 	elif char_owner.is_attacking():
 		char_owner.change_state("Attacking")
+	elif char_owner.velocity.y < 0 and not char_owner.is_on_floor():
+		char_owner.change_state("Falling")
 	
 	

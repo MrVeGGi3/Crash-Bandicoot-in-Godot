@@ -164,9 +164,10 @@ func check_box_collision_state() -> bool:
 	var is_dashing_state = true if current_state == states["Dash"] else false
 	var is_falling_state = true if current_state == states["Falling"] else false
 	var is_attacking_state = true if current_state == states["Attacking"] else false
+	var is_walking_state = true if current_state == states["Walking"] else false
 	
 	match collider:
-		"NormalBox":
+		"NormalBox", "LifeBox", "AkuBox":
 			all_checking_states = ( 
 					is_bumping_state or 
 					is_dashing_state or 
@@ -177,6 +178,20 @@ func check_box_collision_state() -> bool:
 			all_checking_states = (
 				is_bumping_state
 			)
+		"NitroBox":
+			all_checking_states = (
+				is_bumping_state or
+				is_dashing_state or
+				is_falling_state or
+				is_attacking_state or
+				is_walking_state			
+			)
+		"TNTBox":
+			all_checking_states = (
+				is_bumping_state or
+				is_dashing_state or
+				is_attacking_state
+			)
 	
 
 	return all_checking_states
@@ -186,3 +201,7 @@ func check_box_collision_state() -> bool:
 func is_colliding_box():
 	return is_colliding_with_boxes
 					
+func die():
+	GameManager.lifes -= 1
+	queue_free()
+	
