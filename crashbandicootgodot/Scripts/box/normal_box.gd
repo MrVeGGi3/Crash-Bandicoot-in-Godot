@@ -1,7 +1,6 @@
 class_name NormalBox
 extends Box
 
-@onready var destruction_timer: Timer = $DestructionTimer
 @onready var static_body_collision_shape: CollisionShape3D = $StaticBody3D/StaticBodyCollisionShape
 @onready var area_3d_collision_shape: CollisionShape3D = $Area3D/Area3DCollisionShape
 
@@ -31,7 +30,8 @@ func destroy_box(crash_body : CrashBandicootState, meshes):
 	add_rb_in_tree(meshes)
 	instantiate_fruits(fruits_to_instantiate)
 	crash_body.is_colliding_with_boxes = false
-	destruction_timer.start()
+	await  get_tree().create_timer(0.3).timeout
+	queue_free()
 	
 func _on_area_3d_body_entered(body: CrashBandicootState) -> void:
 	check_collision_to_destroy(body, box_fracture)
@@ -42,3 +42,9 @@ func check_collision_to_destroy(body : CrashBandicootState, mesh : Node3D):
 		body.is_colliding_with_boxes = true
 		area_3d_collision_shape.call_deferred("set_disabled", true)
 		destroy_box(body, mesh)
+
+func explode():
+	if has_exploded:
+		return
+	instantiate_fruits(1)
+	queue_free()

@@ -7,6 +7,7 @@ const PARTICLE_RIGIBODY = preload("res://Scenes/Boxes/particle_rigibody.tscn")
 ##Transform Meshes into Rigidbodys to fragment the collision effect
 var type_box_name : String
 var box_fracture : Node3D
+var has_exploded : bool = false
 @export var status_ui : UIControl
 
 func add_rb_in_tree(root : Node):

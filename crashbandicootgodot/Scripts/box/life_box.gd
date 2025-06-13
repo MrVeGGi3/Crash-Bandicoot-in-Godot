@@ -31,3 +31,8 @@ func destroy_box(crash_body : CrashBandicootState, meshes : Node3D):
 
 func _on_destruction_timer_timeout() -> void:
 	queue_free()
+
+func explode():
+	add_rb_in_tree(box_fracture)
+	await get_tree().create_timer(0.5).timeout
+	queue_free()

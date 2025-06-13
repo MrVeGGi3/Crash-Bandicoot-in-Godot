@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://sk8hfusvgwc"]
+[gd_scene load_steps=3 format=3 uid="uid://c5rv2metlam54"]
 
 [ext_resource type="Script" uid="uid://r5rq535c7obg" path="res://Scripts/Effects/explosion.gd" id="1_itj65"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t71c2"]
-size = Vector3(5, 5, 5)
+size = Vector3(6, 6, 6)
 
 [node name="Explosion" type="Area3D"]
 collision_layer = 16
@@ -14,7 +14,6 @@ script = ExtResource("1_itj65")
 shape = SubResource("BoxShape3D_t71c2")
 
 [node name="EffectTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="EffectTimer" to="." method="_on_effect_timer_timeout"]

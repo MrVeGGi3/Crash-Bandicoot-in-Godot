@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0ahnkm45rt72"]
+[gd_scene load_steps=11 format=3 uid="uid://c0ahnkm45rt72"]
 
 [ext_resource type="PackedScene" uid="uid://bb7ndla7o7xxw" path="res://Scenes/Crash/CrashBandicoot.tscn" id="1_ntrby"]
 [ext_resource type="PackedScene" uid="uid://djyvx0gngmpnj" path="res://Scenes/UI/StatsUI.tscn" id="2_cycqr"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b10j42moqambp" path="res://Scenes/Boxes/LifeBox.tscn" id="5_jiqtb"]
 [ext_resource type="PackedScene" uid="uid://beqgbb7aflmb" path="res://Scenes/Boxes/NitroBox.tscn" id="6_qcng4"]
 [ext_resource type="PackedScene" uid="uid://di1v4avjyl1gs" path="res://Scenes/Boxes/RedBox.tscn" id="7_vcb4i"]
-[ext_resource type="PackedScene" uid="uid://byxni5gpuujn3" path="res://Scenes/Boxes/JumpBox/JumpBox.tscn" id="8_cycqr"]
-[ext_resource type="PackedScene" uid="uid://c5ljbiv7iw0q6" path="res://Scenes/Boxes/AkuBox.tscn" id="9_hro7x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3fsbx"]
 size = Vector3(100, 1, 100)
@@ -60,21 +58,5 @@ status_ui = NodePath("../../StatsUi")
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 6.94103, 0)
 
 [node name="RedTNTBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("7_vcb4i")]
-transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, -10.2762, 6.7924, 0)
-status_ui = NodePath("../../StatsUi")
-
-[node name="JumpBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("8_cycqr")]
-transform = Transform3D(3.85472, 0, 0, 0, 3.85472, 0, 0, 0, 3.85472, -24.5296, 5.81146, -28.4446)
-status_ui = NodePath("../../StatsUi")
-
-[node name="JumpBox2" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("8_cycqr")]
-transform = Transform3D(3.85472, 0, 0, 0, 3.85472, 0, 0, 0, 3.85472, -23.5742, 50.3325, -28.3965)
-status_ui = NodePath("../../StatsUi")
-
-[node name="JumpBox3" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("8_cycqr")]
-transform = Transform3D(3.85472, 0, 0, 0, 3.85472, 0, 0, 0, 3.85472, -37.0389, 31.3032, -28.3965)
-status_ui = NodePath("../../StatsUi")
-
-[node name="AkuBox" parent="Boxes" node_paths=PackedStringArray("status_ui") instance=ExtResource("9_hro7x")]
-transform = Transform3D(4.62976, 0, 0, 0, 4.62976, 0, 0, 0, 4.62976, 20.7508, 5.32546, -29.5068)
+transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, -11.6138, 5.869, 0)
 status_ui = NodePath("../../StatsUi")

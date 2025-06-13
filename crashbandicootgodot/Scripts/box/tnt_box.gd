@@ -2,8 +2,6 @@ class_name TNTBox
 extends ExplosiveBox
 
 
-
-@onready var destruction_timer: Timer = $DestructionTimer
 @onready var tnt_animation: AnimationPlayer = $TNTAnimation
 
 @onready var tnt_3_box: Node3D = $TNT3Box
@@ -19,10 +17,6 @@ func _ready() -> void:
 	
 func fragment_mesh():
 	add_rb_in_tree(box_fracture)
-	destruction_timer.start()
-
-func _on_destruction_timer_timeout() -> void:
-	queue_free()
 
 
 func _on_area_3d_body_entered(body: CrashBandicootState) -> void:

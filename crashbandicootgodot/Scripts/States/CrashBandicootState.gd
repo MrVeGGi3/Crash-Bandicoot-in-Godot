@@ -16,6 +16,7 @@ class_name CrashBandicootState
 @onready var crash_animation_tree: AnimationTree = $CrashAnimationTree
 @onready var crash_animation : AnimationPlayer = %CrashAnimationPlayer
 @onready var _skin : Node3D = %CrashAnimations
+@onready var aku_aku: AkuAku = $AkuAku
 
 
 @export_group("Movement")
@@ -33,13 +34,20 @@ var states = {}
 var current_state : State
 
 var conditions = ["idle", "walk", "jump", "dash", "fall", "fall_a", "felt", "attack"]
+var life_states = ["died", "no_mask", "aku", "extra_aku"]
+
+var current_life_state : String
 
 @export_group("Box Colliding Manager")
 var collider : String
 var all_checking_states
 @export var is_colliding_with_boxes : bool = false
 
+signal powered_up
+signal change_life_state(life_state)
+
 func _ready() -> void:
+	current_life_state = life_states[1]
 	_load_states()
 	change_state("Idle")
 
@@ -165,6 +173,7 @@ func check_box_collision_state() -> bool:
 	var is_falling_state = true if current_state == states["Falling"] else false
 	var is_attacking_state = true if current_state == states["Attacking"] else false
 	var is_walking_state = true if current_state == states["Walking"] else false
+	var is_jumping_state = true if current_state == states["Jumping"] else false
 	
 	match collider:
 		"NormalBox", "LifeBox", "AkuBox":
@@ -172,7 +181,8 @@ func check_box_collision_state() -> bool:
 					is_bumping_state or 
 					is_dashing_state or 
 					is_falling_state or 
-					is_attacking_state
+					is_attacking_state or
+					is_jumping_state
 			)
 		"ChainBox":
 			all_checking_states = (
@@ -192,6 +202,14 @@ func check_box_collision_state() -> bool:
 				is_dashing_state or
 				is_attacking_state
 			)
+		"BounceBoxUP":
+			all_checking_states = (
+				is_falling_state 
+			)
+		"BounceBoxDOWN":
+			all_checking_states = (
+				is_jumping_state
+			)
 	
 
 	return all_checking_states
@@ -202,6 +220,16 @@ func is_colliding_box():
 	return is_colliding_with_boxes
 					
 func die():
-	GameManager.lifes -= 1
-	queue_free()
+	if current_life_state == life_states[1]:
+		GameManager.lifes -= 1
+		queue_free()
+	elif current_life_state == life_states[2]:
+		aku_aku.hide()
+		current_life_state = life_states[1]
+	
+
+func power_up():
+	emit_signal("powered_up")
+	aku_aku.show()
+
 	

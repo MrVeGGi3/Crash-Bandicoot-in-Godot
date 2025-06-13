@@ -3035,8 +3035,6 @@ size = Vector3(1.96251, 1.96948, 1.93729)
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 0, 0)
 script = ExtResource("1_0kogx")
 
-[node name="DestructionTimer" type="Timer" parent="."]
-
 [node name="NitroExplosionSound" type="AudioStreamPlayer" parent="."]
 
 [node name="NitroBoxFracture" type="Node3D" parent="."]
@@ -3520,6 +3518,7 @@ libraries = {
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 8
+collision_mask = 17
 
 [node name="StaticBodyCollisionShape" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00771344, 0.0223389, 0.0110779)
@@ -3536,5 +3535,4 @@ transform = Transform3D(1.60222, 0, 0, 0, 1.60222, 0, 0, 0, 1.60222, -0.00771344
 shape = SubResource("BoxShape3D_uqh7d")
 debug_color = Color(0, 0.5562, 0.901368, 0.42)
 
-[connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -16,4 +16,6 @@ func physics_update(delta : float) -> void:
 		char_owner.change_state("Attacking")
 	elif char_owner.is_dashing():
 		char_owner.change_state("FallAttack")
+	elif char_owner.is_on_floor():
+		char_owner.change_state("Felt")
 		

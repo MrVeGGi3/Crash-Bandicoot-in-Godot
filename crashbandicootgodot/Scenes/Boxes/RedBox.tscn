@@ -3049,10 +3049,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TNTBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_bd66o"]
 resource_name = "TNTActivated"
-length = 5.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3099,7 +3111,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
@@ -3108,14 +3120,14 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.16667, 3.66667),
+"times": PackedFloat32Array(3, 3.66667),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
-"method": &"instantiate_explosion"
+"method": &"fragment_mesh"
 }, {
 "args": [],
-"method": &"fragment_mesh"
+"method": &"explode"
 }]
 }
 tracks/5/type = "value"
@@ -3152,8 +3164,6 @@ _data = {
 [node name="RedTNTBox" type="Node3D" groups=["Box", "NormalBox"]]
 transform = Transform3D(5.14646, 0, 0, 0, 5.14646, 0, 0, 0, 5.14646, 0, 0, 0)
 script = ExtResource("1_6fgpi")
-
-[node name="DestructionTimer" type="Timer" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 8
@@ -3669,5 +3679,4 @@ libraries = {
 [node name="Countdown3DSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_bd66o")
 
-[connection signal="timeout" from="DestructionTimer" to="." method="_on_destruction_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
