@@ -1,6 +1,9 @@
 # Crash Bandicoot in Godot
 Crash Bandicoot made in Godot 4.4
 
+![CrashActualStatusIII](https://github.com/user-attachments/assets/c7d703b9-c4cf-4991-bc3b-f941d31ffebd)
+
+
 ## Funcionalidades
 - Animação e Mecânica de Movimento do Crash
 - Ataques, Dash, Queda no alto com dano
