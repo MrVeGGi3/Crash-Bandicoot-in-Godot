@@ -48,4 +48,4 @@ This is an educational project. All rights to Crash Bandicoot belong to Activisi
 
 * **3D Model & Rig:** [MatiasH290 (Sketchfab)](https://sketchfab.com/3d-models/crash-bandicoot-442556bf988345afbbdc1f398c169a30)
 * **Wumpa Fruit:** [Wersaus33 (Sketchfab)](https://sketchfab.com/3d-models/wumpa-fruit-crash-bandicoot-ps1-692e51b5c74743cca25ace41f11cd765)
-* **Programming, Animation Logic & Level Design:** Matheus Soares ([@MrVeGGi3](https://github.com/MrVeGGi3))
+* **Programming:** Matheus Soares ([@MrVeGGi3](https://github.com/MrVeGGi3))
